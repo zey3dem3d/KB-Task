@@ -1,0 +1,12 @@
+         CLIPS (6.4.2 1/14/25)
+CLIPS> (defrule Odd_number
+  ?f <- (number ?n)
+  (test (= (mod ?n 2) 1))
+  =>
+  (printout t "The number is odd" crlf))
+CLIPS> (reset)
+CLIPS> (assert (number 7))
+<Fact-1>
+CLIPS> (run)
+The number is odd
+CLIPS> 
