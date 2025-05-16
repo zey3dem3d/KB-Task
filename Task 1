@@ -1,0 +1,25 @@
+         CLIPS (6.4.2 1/14/25)
+CLIPS> ; Define the rule "check_animal"
+efine
+CLIPS> (defrule check_animal
+  ?f <- (animal ?type)
+  (test (and (neq ?type dog) (neq ?type cat)))
+  =>
+  (printout t "Animal type is: " ?type crlf))
+CLIPS> ; Sample facts to test the rule
+(reset)
+CLIPS> (assert (animal dog))
+<Fact-1>
+CLIPS> (assert (animal cat))
+<Fact-2>
+CLIPS> (assert (animal elephant))
+<Fact-3>
+CLIPS> (assert (animal lion))
+<Fact-4>
+CLIPS> (assert (animal bird))
+<Fact-5>
+CLIPS> (run)
+Animal type is: bird
+Animal type is: lion
+Animal type is: elephant
+CLIPS> 
